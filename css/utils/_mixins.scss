@@ -1,0 +1,38 @@
+@mixin shadow {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin shadow-button {
+    transition: box-shadow 150ms linear, transform 150ms linear;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+@mixin shadow-button--hover {
+    transform: scale(0.98);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.30);
+    background: linear-gradient(175deg, lighten($colour-secondary, 4%) 10%, lighten($colour-primary, 4%) 95%);
+}
+
+@mixin shadow-button--active {
+    transform: scale(0.97);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.30);
+}
+
+// NOTE:  Medias Queries
+@mixin mobile-only {
+    @media screen and (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}

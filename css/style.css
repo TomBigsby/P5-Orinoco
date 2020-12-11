@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,700;0,800;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/components/_buttons.scss */
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none; }
+
+/* line 9, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/components/_buttons.scss */
+.button1 {
+  transition: box-shadow 150ms linear, transform 150ms linear;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3); }
+  /* line 14, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/components/_buttons.scss */
+  .button1:hover {
+    transform: scale(0.98);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(175deg, #ff8de0 10%, #9e67e0 95%); }
+  /* line 18, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/components/_buttons.scss */
+  .button1:active {
+    transform: scale(0.97);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3); }
+
+/* line 4, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+html {
+  font-family: 'Sansita', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  background-color: #FFF; }
+
+/* line 11, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+body {
+  width: 100%;
+  margin: auto;
+  /*    FIXME  dégradé*/
+  /*    background-color: linear-gradient(#FFE4C7 0%, #FDD0AF 100%);*/
+  background-color: #FDD0AF; }
+
+/* line 19, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+header {
+  height: 130px;
+  width: 100%;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 28, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+header img {
+  width: 250px;
+  height: auto; }
+
+/* line 33, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+/* line 39, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.hero {
+  width: 1000px;
+  height: 670px;
+  background: url(../images/teddy_5.jpg) no-repeat;
+  background-size: contain; }
+
+/* line 46, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.choose h2 {
+  font-size: 70px;
+  color: #FFF;
+  margin: 15px; }
+
+/* line 52, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.cardContainer {
+  width: 1000px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  /* line 59, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+  .cardContainer a,
+  .cardContainer a:visited,
+  .cardContainer a:link {
+    text-decoration: none;
+    color: #000; }
+
+/* line 67, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.cardContainer a:hover {
+  color: #FDD0AF; }
+
+/* line 71, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.card {
+  width: 234px;
+  height: 100%;
+  background-color: #B1C8E0;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 9px; }
+  /* line 81, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+  .card__image {
+    width: 216px;
+    height: 228px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center; }
+    /* line 91, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+    .card__image img {
+      width: auto;
+      height: 100%; }
+  /* line 99, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+  .card__name, .card__price {
+    /*    CHANGES faire 2 blocs en hauteurs prenant toute la place. Bloc 1 avec height définie et bloc 2 auto*/
+    height: 70px;
+    font-size: 34px;
+    /*    border: 1px solid black;*/
+    display: flex;
+    align-items: center; }
+  /* line 109, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+  .card__name {
+    color: #5683B3; }
+  /* line 113, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+  .card__price {
+    color: #FFF; }
+
+/* line 118, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.namePriceContainer {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+/* line 125, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #FFF;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 135, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.footer {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 30px;
+  color: #747474; }
+
+/* line 150, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.footer a,
+.footer a:visited,
+.footer a:link {
+  text-decoration: none;
+  color: #747474; }
+
+/* line 157, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.footer a:hover {
+  color: #FDD0AF; }
+
+/* line 161, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.footer .title {
+  font-family: 'Sansita', sans-serif;
+  font-size: 22px;
+  font-style: italic;
+  color: #000; }
+
+/* line 168, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center; }
+
+/* line 175, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.rs-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 8px;
+  margin: 5px;
+  margin-top: 10px; }
+
+/* line 184, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_home.scss */
+.mentions {
+  text-align: right; }
+
+/*# sourceMappingURL=style.css.map */

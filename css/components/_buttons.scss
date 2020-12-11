@@ -1,0 +1,21 @@
+button {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+
+    border: none;
+}
+
+.button1 {
+   
+    
+    @include shadow-button;
+
+    &:hover {
+        @include shadow-button--hover;
+    }
+
+    &:active {
+        @include shadow-button--active;
+    }
+}
