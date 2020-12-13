@@ -1,0 +1,13 @@
+header {
+    height: 130px;
+    width: 100%;
+    background-color: $colour-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 250px;
+    height: auto;
+}

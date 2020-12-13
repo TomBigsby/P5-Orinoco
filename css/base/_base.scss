@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,700;0,800;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    font-family: 'Sansita', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    background-color: #FFF;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    /*    FIXME  dégradé*/
+    /*    background-color: linear-gradient(#FFE4C7 0%, #FDD0AF 100%);*/
+    background-color: $colour-background1;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
