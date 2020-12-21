@@ -1,7 +1,7 @@
 footer {
     width: 100%;
     height: 150px;
-    background-color: $colour-primary;
+    background-color: $colour-secondary;
     margin-top: 70px;
     display: flex;
     justify-content: center;
@@ -15,19 +15,17 @@ footer {
     justify-content: space-between;
 
 
-    font-family: 'Roboto', sans-serif;
+    @include font-secondary;
     font-size: 17px;
-    font-weight: 600;
-    font-style: normal;
     line-height: 30px;
-    color: #747474;
+    color: $colour-tertiary;
 }
 
 .footer a,
 .footer a:visited,
 .footer a:link {
     text-decoration: none;
-    color: #747474;
+    color: $colour-tertiary;
 }
 
 .footer a:hover {
@@ -35,27 +33,31 @@ footer {
 }
 
 .footer .title {
-    font-family: 'Sansita', sans-serif;
+    @include font-primary;
     font-size: 22px;
-    font-style: italic;
     color: #000;
 }
 
-.social {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.follow {
     text-align: center;
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .rs-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #000;
+        border-radius: 8px;
+        margin: 5px;
+        margin-top: 10px;
+    }
 }
 
-.rs-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #000;
-    border-radius: 8px;
-    margin: 5px;
-    margin-top: 10px;
-}
 
 .mentions {
     text-align: right;

@@ -7,7 +7,7 @@
 
     &__title {
         position: absolute;
-        color: $colour-4;
+        color: $colour-primary;
         font-size: 70px;
         top: 212px;
         left: 580px;
@@ -16,11 +16,11 @@
 
 .choose h2 {
     font-size: 70px;
-    color: $colour-primary;
+    color: $colour-4;
     margin: 15px;
 }
 
-.cardContainer {
+#cardsContainer {
     width: 1000px;
     height: 300px;
     display: flex;
@@ -35,7 +35,7 @@
     }
 }
 
-.cardContainer a:hover {}
+.cardsContainer a:hover {}
 
 .card {
     width: 234px;
@@ -55,12 +55,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-
-
-        & img {
-            width: auto;
-            height: 100%;
-        }
+        object-fit: cover;
     }
 
     &-namePriceContainer {
@@ -68,12 +63,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
- 
+        flex-grow: 1;
+
+
         &__name,
         &__price {
-            height: 70px;
             font-size: 29px;
-            line-height: 30px;
+            line-height: 26px;
             display: flex;
             align-items: center;
         }

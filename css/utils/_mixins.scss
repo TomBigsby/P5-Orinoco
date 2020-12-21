@@ -1,22 +1,56 @@
+// NOTE:  Polices
+@mixin font-primary {
+    font-family: 'Sansita', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+@mixin font-secondary {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+//  NOTE: boutons
+@mixin bouton-bleu {
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    background: $colour-secondary;
+    color: $colour-tertiary;
+    border: 1px solid;
+    border-color: rgba($colour-tertiary, 0.3);
+    @include font-primary;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 7px;
+    outline: none;
+
+    border-bottom: 5px solid $colour-tertiary;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    &:hover {
+        background-color: darken($colour-secondary, 3%);
+    }
+
+    &:active {
+        border-bottom: 1px solid $colour-tertiary;
+        transform: translateY(3px);
+        outline: none;
+    }
+
+}
+
+
+// NOTE:  Ombres
 @mixin shadow {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-@mixin shadow-button {
-    transition: box-shadow 150ms linear, transform 150ms linear;
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.30);
-}
-
-@mixin shadow-button--hover {
-    transform: scale(0.98);
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.30);
-    background: linear-gradient(175deg, lighten($colour-secondary, 4%) 10%, lighten($colour-primary, 4%) 95%);
-}
-
-@mixin shadow-button--active {
-    transform: scale(0.97);
-    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.30);
-}
 
 // NOTE:  Medias Queries
 @mixin mobile-only {

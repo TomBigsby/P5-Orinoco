@@ -1,0 +1,32 @@
+.message-container {
+    width: 550px;
+    height: auto;
+
+    background-color: $colour-primary;
+    @include font-secondary;
+    color: #000;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .message {
+        @include font-primary;
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    & .orderNumber {
+        @include font-secondary;
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    & .totalOrder {
+        @include font-secondary;
+        font-size: 30px;
+        padding: 20px;
+    }
+}
