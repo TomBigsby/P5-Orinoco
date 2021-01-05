@@ -8,86 +8,106 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/7cfecc5119.js" crossorigin="anonymous"></script>
 
-
-    <!--    <script src="JS/import_products.js" defer></script>-->
+    <script src="JS/page_basket.js" defer></script>
 
 </head>
 
 <body>
     <header>
-        <div><img src="images/logo-Onorico.png" alt=""></div>
-    </header>
+        <div id="header">
+            <div><a href="index.html"><img src="images/logo-Onorico.png" alt=""></a></div>
+            <div id="basket">
+                <div>
+                    <a href="basket.html"><i class="fas fa-shopping-basket fa-3x"></i></a>
+                    <div id="nbArticleDisplay"></div>
+                </div>
 
+                <div id="bulle">
+                    <div id="bulleText"></div>
+                    <div class="arrow-up"></div>
+                </div>
+
+            </div>
+        </div>
+    </header>
     <main>
         <div class="basket-container">
             <div class="myBasket">
                 <div class="myBasket-line">
-                    <h2 class="myBasket-line__title">Mon panier</h2>
-                    <div class="myBasket-line-nbArticle">
-                        <span class="myBasket-line-nbArticle__number">[2] </span><span>articles</span>
+                    <h2>Mon panier</h2>
+                </div>
+                <div id="myBasketList">
+                    <div class="head">
+                        <div class="head-article">Article</div>
+                        <div class="head-price">Prix</div>
+                        <div class="head-quantity">Quantité</div>
+                        <div class="head-total">Prix Total</div>
+                    </div>
+                    <div class="myBasket-list-article">
+                        <div class="myBasket-list-article-col1">
+                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
+                        </div>
+                        <div class="myBasket-list-article-col2">
+                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
+                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
+                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
+                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
+                        </div>
+                        <div class="myBasket-list-article-col3">
+                            <div class="myBasket-list-article-col3__price">[25] €</div>
+                        </div>
+                    </div>
+                    <div class="myBasket-list-article">
+                        <div class="myBasket-list-article-col1">
+                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
+                        </div>
+                        <div class="myBasket-list-article-col2">
+                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
+                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
+                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
+                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
+                        </div>
+                        <div class="myBasket-list-article-col3">
+                            <div class="myBasket-list-article-col3__price">[25] €</div>
+                        </div>
+                    </div>
+                    <div class="myBasket-list-article">
+                        <div class="myBasket-list-article-col1">
+                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
+                        </div>
+                        <div class="myBasket-list-article-col2">
+                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
+                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
+                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
+                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
+                        </div>
+                        <div class="myBasket-list-article-col3">
+                            <div class="myBasket-list-article-col3__price">[25] €</div>
+                        </div>
+                    </div>
+                    <div class="myRecap">
+                        <div class="myRecap-space"></div>
+                        <div class="myRecap-nbArticle">[2] articles</div>
+                        <div class="myRecap-totalPrice">TOTAL PANIER : [75] €</div>
                     </div>
                 </div>
-                <div class="myBasket-list">
-                    <div class="myBasket-list-article">
-                        <div class="myBasket-list-article-col1">
-                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
-                        </div>
-                        <div class="myBasket-list-article-col2">
-                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
-                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
-                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
-                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
-                        </div>
-                        <div class="myBasket-list-article-col3">
-                            <div class="myBasket-list-article-col3__price">[25] €</div>
-                        </div>
-                        <div class="myBasket-list-article__cross"><i class="fas fa-times"></i></div>
-                    </div>
-                    <div class="myBasket-list-article">
-                        <div class="myBasket-list-article-col1">
-                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
-                        </div>
-                        <div class="myBasket-list-article-col2">
-                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
-                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
-                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
-                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
-                        </div>
-                        <div class="myBasket-list-article-col3">
-                            <div class="myBasket-list-article-col3__price">[25] €</div>
-                        </div>
-                        <div class="myBasket-list-article__cross"><i class="fas fa-times"></i></div>
-                    </div>
-                    <div class="myBasket-list-article">
-                        <div class="myBasket-list-article-col1">
-                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
-                        </div>
-                        <div class="myBasket-list-article-col2">
-                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
-                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
-                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
-                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
-                        </div>
-                        <div class="myBasket-list-article-col3">
-                            <div class="myBasket-list-article-col3__price">[25] €</div>
-                        </div>
-                        <div class="myBasket-list-article__cross"><i class="fas fa-times"></i></div>
-                    </div>
 
-                </div>
+                <form class="form" action="">
+                    <div>
+                        <h2>Vos coordonnées</h2>
+                    </div>
+                    <input type="text" id="coordName" name="coordonnees" placeholder="Nom" class="champ">
+                    <input type="text" id="coordLName" name="coordonnees" placeholder="Prénom" class="champ">
+                    <input type="text" id="coordAdress" name="coordonnees" placeholder="Adresse" class="champ">
+                    <input type="text" id="coordCP" name="coordonnees" placeholder="Code postal" class="champ">
+                    <input type="text" id="coordVille" name="coordonnees" placeholder="Ville" class="champ">
+
+                    <input type="text" id="coordEmail" name="coordonnees" placeholder="Email" class="champ">
+                    <input type="text" id="coordTel" name="coordonnees" placeholder="Téléphone" class="champ">
+                    <button class="div myRecap__valid" onclick="">Valider mon panier</button>
+                </form>
             </div>
-            <div class="separator"></div>
-            <div class="myRecap">
-                <div class="myRecap-line">
-                    <h2 class="myRecap-line__title">Récapitulatif</h2>
-                </div>
-                <div class="myRecap-nbArticle"><span>articles </span><span class="myRecap-nbArticle__number">([3])</span></div>
-                <div class="myRecap-totalLine">
-                    <span>TOTAL</span>
-                    <span class="myRecap-totalLine__price">[75] €</span>
-                    <button class="div myRecap__valid">Valider mon panier</button>
-                </div>
-            </div>
+
         </div>
 
 
@@ -114,4 +134,6 @@
             </div>
         </div>
     </footer>
-</body></html>
+</body>
+
+</html>

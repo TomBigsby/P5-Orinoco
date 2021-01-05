@@ -7,7 +7,7 @@ header {
 }
 
 #header {
-    width: 1000px;
+    width: 930px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -17,4 +17,97 @@ header {
         width: 250px;
         height: auto;
     }
+
+    & #basket {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & i {
+            //            z-index: 4;
+        }
+
+        //  FIXME: prob z-index pastille
+        & #nbArticleDisplay {
+            width: 30px;
+            height: 30px;
+            color: #FFF;
+            background-color: $colour-tertiary;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2px;
+            margin-top: -17px;
+            //            z-index: 5;
+        }
+
+
+        & #bulle {
+            position: absolute;
+            height: 35px;
+            min-width: 230px;
+            background-color: #FFF;
+            color: #000;
+            border-radius: 7px;
+            top: 74px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include shadow;
+            opacity: 0;
+
+            & #bulleText {
+                @include font-secondary;
+                font-weight: 500;
+                font-size: 12px;
+                text-align: center;
+            }
+
+            & .arrow-up {
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid #FFF;
+
+                margin-top: -9px;
+                align-self: flex-start;
+            }
+        }
+
+        & .changing {
+            animation: bounce 2s linear both;
+
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    2% {
+        transform: translateY(12px)
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0)
+    }
+
+
 }

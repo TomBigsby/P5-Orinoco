@@ -13,57 +13,30 @@
 <body>
     <header>
         <div id="header">
-            <div><img src="images/logo-Onorico.png" alt=""></div>
-            <div class="basket"><i class="fas fa-shopping-basket fa-3x"></i></div>
+            <div><a href="index.html"><img src="images/logo-Onorico.png" alt=""></a></div>
+            <!-- debug: BT à supprimer  -->
+            <button id="debug" value="clear">Clear</button>
+            <div id="basket">
+                <div>
+                    <a href="basket.html"><i class="fas fa-shopping-basket fa-3x"></i></a>
+                    <div id="nbArticleDisplay"></div>
+                </div>
+
+                <div id="bulle">
+                    <div id="bulleText"></div>
+                    <div class="arrow-up"></div>
+                </div>
+
+            </div>
+
         </div>
     </header>
 
     <main>
 
         <div id="product-container">
-            <!--            <img class="product-image" src="images/teddy_placeholder.jpg" alt="">-->
-
-            <!--            <div class="product-details">-->
-            <!-- <div class="product-details-top">
-                    <h1 class="product-details__name">Teddy</h1>
-                    <div class="product-details__description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. </p>
-                    </div>
-                </div>-->
-            <!--<div class="product-details-bottom">
-                    <div class="line-varPrice">
-                        <select class="product-details__variations">
-                            <option value="valeur1">Valeur 1</option>
-                            <option value="valeur2">Valeur 2</option>
-                            <option value="valeur3">Valeur 3</option>
-                            <option value="valeur3">Valeur 4</option>
-                        </select>
-
-                        <div class="product-details__price">25 €</div>
-                    </div>
-
-                    <div class="radio">
-                        <div><input id="option1" class="form-radio" type="radio" value="blue" name="color">
-                            <label class="option" for="green">
-                                <div class="colorTile color1"></div>
-                            </label>
-                        </div>
-                        <div><input id="option2" class="form-radio" type="radio" value="red" name="color">
-                            <label class="option" for="green">
-                                <div class="colorTile color2"></div>
-                            </label>
-                        </div>
-                        <div><input id="option3" class="form-radio" type="radio" value="green" name="color">
-                            <label class="option" for="green">
-                                <div class="colorTile color3"></div>
-                            </label>
-                        </div>
-                    </div>
-                    <button class="product-details__valid" name="valid">Ajouter au panier</button>
 
 
-                </div>
-            </div>-->
         </div>
     </main>
     <footer>

@@ -17,16 +17,47 @@
         margin: 0;
     }
 
-    & .myBasket,
-    & .myRecap {
+    &.myBasketList{
+        width: 100%;
+        
+    }
+    & .myBasket {
+        width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+
+        & .head {
+            width: 100%;
+            display: flex;
+            background-color: darken($colour-primary, 7%);
+            padding: 6px;
+            padding-left: 17px;
+            border-radius: 7px;
+            justify-content: space-between;
+            font-weight: 500;
+
+            & .head-article {
+                flex-grow: 4;
+                border: 1px solid black;
+            }
+
+            & .head-price,
+            & .head-quantity,
+            & .head-total {
+                flex-grow: 1;
+                //  DEBUG: 
+                border: 1px solid black;
+                text-align: center;
+            }
+        }
 
         &-line {
             display: flex;
             flex-direction: row;
             justify-content: center;
-            align-items: baseline;
+            align-items: center;
             margin-bottom: 30px;
 
             &__title {
@@ -41,10 +72,6 @@
                 margin-left: 20px;
             }
         }
-    }
-
-    & .myBasket {
-        width: 70%;
 
         &-list {
             display: flex;
@@ -55,11 +82,10 @@
             &-article {
                 display: flex;
                 flex-direction: row;
-                padding: 10px;
-                background-color: #FFF;
+                padding: 17px;
                 padding-right: 20px;
-                border-radius: 5px;
                 position: relative;
+                border-bottom: 1px solid rgba(0, 0, 0, .2);
 
                 &-col1 {
                     width: 90px;
@@ -92,41 +118,67 @@
                     display: flex;
                     flex-grow: 1;
                     justify-content: flex-end;
-                    align-items: flex-end;
+                    align-items: center;
 
                     &__price {
                         margin: 10px 0;
                         font-weight: 600;
-
                     }
-                }
-
-                &__cross {
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                    color: red;
                 }
             }
         }
-    }
 
-    & .myRecap {
-        font-size: 20px;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: space-between;
+        & .myRecap {
+            display: flex;
+            font-weight: 600;
+            margin: 25px 10px;
+            ;
 
-        & button {
-            @include bouton-bleu;
+            &-totalLine {
+                justify-content: space-between;
+                margin: 20px;
+            }
+
+            &-space {
+                flex-grow: 4;
+            }
+
+            &-nbArticle,
+            &-totalPrice {
+                flex-grow: 1;
+                text-align: center;
+            }
+        }
+
+        & .form {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+            text-align: center;
+            border: 1px solid black;
+
+            & .champ {
+                width: 100%;
+                margin-top: 6px;
+                padding: 5px;
+                padding-left: 12px;
+                height: 30px;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 4px;
+            }
+
+            & .champ:nth-child(2),
+            & .champ:nth-child(3),
+            & .champ:nth-child(5),
+            & .champ:nth-child(6) {
+                width: 50%;
+            }
+
+            & button {
+                @include bouton-bleu;
+            }
         }
     }
-
-    & .separator {
-        margin: 0 30px;
-        width: 1px;
-        height: auto;
-        background-color: $colour-4;
-    }
-
 }

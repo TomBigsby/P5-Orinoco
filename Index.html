@@ -7,14 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="JS/page_home.js" defer></script>
+    <script src="https://kit.fontawesome.com/7cfecc5119.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <header>
         <div id="header">
-            <div><img src="images/logo-Onorico.png" alt=""></div>
-            <div class="basket">Panier</div>
+            <div><a href="Index.html"><img src="images/logo-Onorico.png" alt=""></a></div>
+           
+            <div id="basket">
+                <div>
+                    <a href="basket.html"><i class="fas fa-shopping-basket fa-3x"></i></a>
+                    <div id="nbArticleDisplay"></div>
+                </div>
+
+                <div id="bulle">
+                    <div id="bulleText"></div>
+                    <div class="arrow-up"></div>
+                </div>
+            </div>
         </div>
     </header>
 

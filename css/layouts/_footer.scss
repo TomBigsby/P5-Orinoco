@@ -13,8 +13,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-
     @include font-secondary;
     font-size: 17px;
     line-height: 30px;
