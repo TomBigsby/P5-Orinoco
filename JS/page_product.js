@@ -111,17 +111,10 @@ function getProductsData() {
 
             let myBasket
             productValid.onclick = () => {
-
-                //  TODO: Prévoir le cas de figure où l'article n'a pas de variante (pas de blocage de la mise au panier). A TESTER > SI ((option selectionnée n'est pas --choisissez-- && le nombre de couleur est supérieur à 1) OU (le nombre de couleur est égale à 1))
-                // 
-
                 // si une des couleurs est bien sélectionnée, on ajoute l'article au panier
                 if ((productVariantSelect.selectedIndex !== 0 && response.colors.length > 1) || (productVariantSelect.selectedIndex === 0 && response.colors.length == 1)) {
 
                     animBulle()
-
-                    //  TODO: localStorage en double > récupérer la valeur du nombre d'article avec JSON.parse(localStorage.getItem("monArticle")).length
-
 
                     // incrémentation du nombre d'article dans le panier
                     nbArticle++;
@@ -130,17 +123,14 @@ function getProductsData() {
                     addToBasket();
                     bulleText.textContent = response.name + " " + productVariantSelect.value + " ajouté au panier";
 
-
                     // NOTE: localstorage > Ajout de l'article mis au panier OU création du cookie mesArticles
                     let tabArticles = JSON.parse(localStorage.getItem("mesArticles")) || [];
-
 
                     let qty;
                     let currentQty;
                     let indexDoublon;
                     let colorSelected;
                     let trouve = false;
-
 
                     // Si le panier n'est pas vide
                     if (tabArticles.length > 0) {
@@ -174,7 +164,6 @@ function getProductsData() {
                             id: response._id,
                             price: response.price,
                             image: response.imageUrl,
-                            couleur: productVariantSelect.value,
                             quantity: qty
                         });
                     } else {
@@ -184,7 +173,6 @@ function getProductsData() {
                             id: response._id,
                             price: response.price,
                             image: response.imageUrl,
-                            couleur: productVariantSelect.value,
                             quantity: qty
                         });
                     }
@@ -201,7 +189,7 @@ function getProductsData() {
             }
         });
 }
-// DEBUG: remise à zéro du nbre d'articles au double click sur le panier
+// DEBUG: remise à zéro du nbre d'articles 
 debug.addEventListener('click', function (e) {
     localStorage.removeItem("nbArticleCookie");
     nbArticleDisplay.textContent = "";

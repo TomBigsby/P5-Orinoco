@@ -1,7 +1,6 @@
-.basket-container {
+#myBasket {
     width: 900px;
     height: auto;
-
     background-color: $colour-primary;
     @include font-secondary;
     color: #000;
@@ -9,176 +8,150 @@
     margin-top: 50px;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     & h2 {
         @include font-primary;
         font-size: 30px;
         margin: 0;
+        text-align: center;
+        margin-bottom: 30px;
     }
 
-    &.myBasketList{
-        width: 100%;
-        
-    }
-    & .myBasket {
-        width: 100%;
+    & .head {
+        background-color: darken($colour-primary, 7%);
+        padding: 8px;
+        border-radius: 7px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid black;
+        justify-content: space-between;
+        font-weight: 500;
 
-        & .head {
-            width: 100%;
-            display: flex;
-            background-color: darken($colour-primary, 7%);
-            padding: 6px;
-            padding-left: 17px;
-            border-radius: 7px;
-            justify-content: space-between;
-            font-weight: 500;
 
-            & .head-article {
-                flex-grow: 4;
-                border: 1px solid black;
-            }
-
-            & .head-price,
-            & .head-quantity,
-            & .head-total {
-                flex-grow: 1;
-                //  DEBUG: 
-                border: 1px solid black;
-                text-align: center;
-            }
+        & .head-article {
+            width: 40%;
         }
 
-        &-line {
+        & .head-price,
+        & .head-quantity,
+        & .head-total {
+            text-align: center;
+            width: 20%;
+        }
+    }
+
+    & .myBasket-list {
+        &-article {
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 30px;
+            padding: 8px;
 
-            &__title {
-                @include font-primary;
-            }
+            position: relative;
+            border-bottom: $colour-filet;
 
-            &-nbArticle {
-                @include font-secondary;
-            }
-
-            &-nbArticle__number {
-                margin-left: 20px;
-            }
-        }
-
-        &-list {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: calc((120px + 10px)*3);
-
-            &-article {
+            &-col1 {
                 display: flex;
-                flex-direction: row;
-                padding: 17px;
-                padding-right: 20px;
-                position: relative;
-                border-bottom: 1px solid rgba(0, 0, 0, .2);
+                width: 40%;
 
-                &-col1 {
+                & .z1 {
                     width: 90px;
                     height: 100px;
                     object-fit: cover;
                     border: 1px solid #C4C4C4;
                     overflow: hidden;
+                    display: flex;
+                    justify-content: center;
 
                     & img {
-                        width: 100%;
+                        height: 100%;
                     }
                 }
 
-                &-col2 {
-                    margin: 10px 20px;
+                & .z2 {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
-
-                    &__ref {
-                        font-size: 11px;
-                    }
-
-                    & h3 {
-                        margin: 0;
-                    }
+                    margin: 10px 20px;
                 }
 
-                &-col3 {
-                    display: flex;
-                    flex-grow: 1;
-                    justify-content: flex-end;
-                    align-items: center;
+                & h3 {
+                    margin: 0;
+                    margin-bottom: 10px;
+                }
 
-                    &__price {
-                        margin: 10px 0;
-                        font-weight: 600;
-                    }
+                &__ref {
+                    font-size: 11px;
                 }
             }
-        }
 
-        & .myRecap {
-            display: flex;
-            font-weight: 600;
-            margin: 25px 10px;
-            ;
-
-            &-totalLine {
-                justify-content: space-between;
-                margin: 20px;
-            }
-
-            &-space {
-                flex-grow: 4;
-            }
-
-            &-nbArticle,
-            &-totalPrice {
-                flex-grow: 1;
+            &-col2,
+            &-col3,
+            &-col4 {
+                width: 20%;
                 text-align: center;
+                align-self: center;
+            }
+        }
+    }
+
+    & #myRecap {
+        display: flex;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 20px 10px;
+        border-bottom: $colour-filet;
+
+        &Space1 {
+            width: 40%;
+        }
+
+        &Space1::before {
+            content: "\2002"
+        }
+
+        &Space2,
+        &Space3,
+        &Space4 {
+            width: 20%;
+            text-align: center;
+        }
+    }
+
+    & .form {
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        text-align: center;
+        margin: 30px 0;
+        justify-content: space-between;
+
+        & .titre {
+            width: 100%;
+
+            & h2 {
+                margin-bottom: 16px;
             }
         }
 
-        & .form {
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-self: center;
-            text-align: center;
-            border: 1px solid black;
+        & .champ {
+            margin-top: 8px;
+            padding: 5px;
+            padding-left: 12px;
+            height: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            width: 100%;
+        }
 
-            & .champ {
-                width: 100%;
-                margin-top: 6px;
-                padding: 5px;
-                padding-left: 12px;
-                height: 30px;
-                border: 1px solid rgba(0, 0, 0, 0.15);
-                border-radius: 4px;
-            }
+        & .champ:nth-child(2),
+        & .champ:nth-child(3),
+        & .champ:nth-child(5),
+        & .champ:nth-child(6) {
+            width: calc(50% - 22px);
 
-            & .champ:nth-child(2),
-            & .champ:nth-child(3),
-            & .champ:nth-child(5),
-            & .champ:nth-child(6) {
-                width: 50%;
-            }
+        }
 
-            & button {
-                @include bouton-bleu;
-            }
+        & button {
+            @include bouton-bleu;
         }
     }
 }

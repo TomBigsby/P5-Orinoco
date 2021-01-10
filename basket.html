@@ -31,85 +31,41 @@
         </div>
     </header>
     <main>
-        <div class="basket-container">
-            <div class="myBasket">
-                <div class="myBasket-line">
-                    <h2>Mon panier</h2>
-                </div>
-                <div id="myBasketList">
-                    <div class="head">
-                        <div class="head-article">Article</div>
-                        <div class="head-price">Prix</div>
-                        <div class="head-quantity">Quantité</div>
-                        <div class="head-total">Prix Total</div>
-                    </div>
-                    <div class="myBasket-list-article">
-                        <div class="myBasket-list-article-col1">
-                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
-                        </div>
-                        <div class="myBasket-list-article-col2">
-                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
-                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
-                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
-                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
-                        </div>
-                        <div class="myBasket-list-article-col3">
-                            <div class="myBasket-list-article-col3__price">[25] €</div>
-                        </div>
-                    </div>
-                    <div class="myBasket-list-article">
-                        <div class="myBasket-list-article-col1">
-                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
-                        </div>
-                        <div class="myBasket-list-article-col2">
-                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
-                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
-                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
-                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
-                        </div>
-                        <div class="myBasket-list-article-col3">
-                            <div class="myBasket-list-article-col3__price">[25] €</div>
-                        </div>
-                    </div>
-                    <div class="myBasket-list-article">
-                        <div class="myBasket-list-article-col1">
-                            <img class="myBasket-list-article-col1__picture" src="images/teddy_placeholder.jpg" alt="">
-                        </div>
-                        <div class="myBasket-list-article-col2">
-                            <h3 class="div myBasket-list-article-col2__name">[Teddy]</h3>
-                            <div class="div myBasket-list-article-col2__ref">ref : [55666888774411]</div>
-                            <div class="div myBasket-list-article-col2__color">couleur : [marron]</div>
-                            <div class="div myBasket-list-article-col2__quantity">Quantité : [1]</div>
-                        </div>
-                        <div class="myBasket-list-article-col3">
-                            <div class="myBasket-list-article-col3__price">[25] €</div>
-                        </div>
-                    </div>
-                    <div class="myRecap">
-                        <div class="myRecap-space"></div>
-                        <div class="myRecap-nbArticle">[2] articles</div>
-                        <div class="myRecap-totalPrice">TOTAL PANIER : [75] €</div>
-                    </div>
-                </div>
 
-                <form class="form" action="">
-                    <div>
-                        <h2>Vos coordonnées</h2>
-                    </div>
-                    <input type="text" id="coordName" name="coordonnees" placeholder="Nom" class="champ">
-                    <input type="text" id="coordLName" name="coordonnees" placeholder="Prénom" class="champ">
-                    <input type="text" id="coordAdress" name="coordonnees" placeholder="Adresse" class="champ">
-                    <input type="text" id="coordCP" name="coordonnees" placeholder="Code postal" class="champ">
-                    <input type="text" id="coordVille" name="coordonnees" placeholder="Ville" class="champ">
-
-                    <input type="text" id="coordEmail" name="coordonnees" placeholder="Email" class="champ">
-                    <input type="text" id="coordTel" name="coordonnees" placeholder="Téléphone" class="champ">
-                    <button class="div myRecap__valid" onclick="">Valider mon panier</button>
-                </form>
+        <div id="myBasket">
+            <h2>Panier</h2>
+            <div class="head">
+                <div class="head-article">Article</div>
+                <div class="head-price">Prix</div>
+                <div class="head-quantity">Quantité</div>
+                <div class="head-total">Prix Total</div>
+            </div>
+            <div id="myBasketList">
+            </div>
+            <div id="myRecap">
+                <div id="myRecapSpace1">
+                    TOTAL PANIER
+                </div>
+                <div id="myRecapSpace2"></div>
+                <div id="myRecapSpace3"></div>
+                <div id="myRecapSpace4"></div>
             </div>
 
-        </div>
+            <form class="form" action="">
+                <div class="titre">
+                    <h2>Vos coordonnées</h2>
+                </div>
+                <input type="text" id="coordName" name="coordonnees" placeholder="Nom" class="champ">
+                <input type="text" id="coordLName" name="coordonnees" placeholder="Prénom" class="champ">
+                <input type="text" id="coordAdress" name="coordonnees" placeholder="Adresse" class="champ">
+                <input type="text" id="coordCP" name="coordonnees" placeholder="Code postal" class="champ">
+                <input type="text" id="coordVille" name="coordonnees" placeholder="Ville" class="champ">
 
+                <input type="text" id="coordEmail" name="coordonnees" placeholder="Email" class="champ">
+                <input type="text" id="coordTel" name="coordonnees" placeholder="Téléphone" class="champ">
+                <button id="formValid" onclick="">Valider mon panier</button>
+            </form>
+        </div>
 
     </main>
     <footer>
@@ -134,6 +90,4 @@
             </div>
         </div>
     </footer>
-</body>
-
-</html>
+</body></html>

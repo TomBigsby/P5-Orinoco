@@ -44,7 +44,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
-    /* line 32, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
+    /* line 27, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
+    #header #basket i {
+      overflow: hidden; }
+    /* line 33, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
     #header #basket #nbArticleDisplay {
       width: 30px;
       height: 30px;
@@ -56,7 +59,7 @@ header {
       align-items: center;
       padding-bottom: 2px;
       margin-top: -17px; }
-    /* line 47, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
+    /* line 49, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
     #header #basket #bulle {
       position: absolute;
       height: 35px;
@@ -70,7 +73,7 @@ header {
       align-items: center;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
       opacity: 0; }
-      /* line 61, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
+      /* line 63, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
       #header #basket #bulle #bulleText {
         font-family: 'Roboto', sans-serif;
         font-style: normal;
@@ -78,7 +81,7 @@ header {
         font-weight: 500;
         font-size: 12px;
         text-align: center; }
-      /* line 68, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
+      /* line 70, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
       #header #basket #bulle .arrow-up {
         position: absolute;
         width: 0px;
@@ -88,7 +91,7 @@ header {
         border-bottom: 10px solid #FFF;
         margin-top: -9px;
         align-self: flex-start; }
-    /* line 81, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
+    /* line 83, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/layouts/_header.scss */
     #header #basket .changing {
       animation: bounce 2s linear both; }
 
@@ -344,7 +347,7 @@ footer {
       outline: none; }
 
 /* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-.basket-container {
+#myBasket {
   width: 900px;
   height: auto;
   background-color: #F5F0E6;
@@ -356,182 +359,150 @@ footer {
   margin-top: 50px;
   border-radius: 10px;
   display: flex;
-  flex-direction: row; }
-  /* line 14, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-  .basket-container h2 {
+  flex-direction: column; }
+  /* line 13, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+  #myBasket h2 {
     font-family: 'Sansita', sans-serif;
     font-style: italic;
     font-weight: 800;
     letter-spacing: 0.02em;
     font-size: 30px;
-    margin: 0; }
-  /* line 20, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-  .basket-container.myBasketList {
-    width: 100%; }
-  /* line 24, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-  .basket-container .myBasket {
-    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 30px; }
+  /* line 21, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+  #myBasket .head {
+    background-color: #ebe1cd;
+    padding: 8px;
+    border-radius: 7px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black; }
-    /* line 31, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-    .basket-container .myBasket .head {
-      width: 100%;
-      display: flex;
-      background-color: #ebe1cd;
-      padding: 6px;
-      padding-left: 17px;
-      border-radius: 7px;
-      justify-content: space-between;
-      font-weight: 500; }
-      /* line 41, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .head .head-article {
-        flex-grow: 4;
-        border: 1px solid black; }
-      /* line 46, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .head .head-price,
-      .basket-container .myBasket .head .head-quantity,
-      .basket-container .myBasket .head .head-total {
-        flex-grow: 1;
-        border: 1px solid black;
-        text-align: center; }
-    /* line 56, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-    .basket-container .myBasket-line {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 30px; }
-      /* line 63, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket-line__title {
-        font-family: 'Sansita', sans-serif;
-        font-style: italic;
-        font-weight: 800;
-        letter-spacing: 0.02em; }
-      /* line 67, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket-line-nbArticle {
-        font-family: 'Roboto', sans-serif;
-        font-style: normal;
-        font-weight: 400; }
-      /* line 71, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket-line-nbArticle__number {
-        margin-left: 20px; }
-    /* line 76, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-    .basket-container .myBasket-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: calc((120px + 10px)*3); }
-      /* line 82, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket-list-article {
-        display: flex;
-        flex-direction: row;
-        padding: 17px;
-        padding-right: 20px;
-        position: relative;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-        /* line 90, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-        .basket-container .myBasket-list-article-col1 {
-          width: 90px;
-          height: 100px;
-          object-fit: cover;
-          border: 1px solid #C4C4C4;
-          overflow: hidden; }
-          /* line 97, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-          .basket-container .myBasket-list-article-col1 img {
-            width: 100%; }
-        /* line 102, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-        .basket-container .myBasket-list-article-col2 {
-          margin: 10px 20px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between; }
-          /* line 108, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-          .basket-container .myBasket-list-article-col2__ref {
-            font-size: 11px; }
-          /* line 112, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-          .basket-container .myBasket-list-article-col2 h3 {
-            margin: 0; }
-        /* line 117, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-        .basket-container .myBasket-list-article-col3 {
-          display: flex;
-          flex-grow: 1;
-          justify-content: flex-end;
-          align-items: center; }
-          /* line 123, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-          .basket-container .myBasket-list-article-col3__price {
-            margin: 10px 0;
-            font-weight: 600; }
-    /* line 131, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-    .basket-container .myBasket .myRecap {
-      display: flex;
-      font-weight: 600;
-      margin: 25px 10px; }
-      /* line 137, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .myRecap-totalLine {
-        justify-content: space-between;
-        margin: 20px; }
-      /* line 142, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .myRecap-space {
-        flex-grow: 4; }
-      /* line 146, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .myRecap-nbArticle, .basket-container .myBasket .myRecap-totalPrice {
-        flex-grow: 1;
-        text-align: center; }
-    /* line 153, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-    .basket-container .myBasket .form {
-      width: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-self: center;
+    justify-content: space-between;
+    font-weight: 500; }
+    /* line 30, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .head .head-article {
+      width: 40%; }
+    /* line 34, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .head .head-price,
+    #myBasket .head .head-quantity,
+    #myBasket .head .head-total {
       text-align: center;
-      border: 1px solid black; }
-      /* line 162, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .form .champ {
-        width: 100%;
-        margin-top: 6px;
-        padding: 5px;
-        padding-left: 12px;
-        height: 30px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        border-radius: 4px; }
-      /* line 172, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .form .champ:nth-child(2),
-      .basket-container .myBasket .form .champ:nth-child(3),
-      .basket-container .myBasket .form .champ:nth-child(5),
-      .basket-container .myBasket .form .champ:nth-child(6) {
-        width: 50%; }
-      /* line 179, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
-      .basket-container .myBasket .form button {
-        width: 100%;
-        height: 50px;
-        margin-top: 15px;
-        background: #B1C8E0;
-        color: #406FA0;
-        border: 1px solid;
-        border-color: rgba(64, 111, 160, 0.3);
-        font-family: 'Sansita', sans-serif;
-        font-style: italic;
-        font-weight: 800;
-        letter-spacing: 0.02em;
-        font-size: 24px;
-        cursor: pointer;
-        text-align: center;
-        border-radius: 7px;
-        outline: none;
-        border-bottom: 5px solid #406FA0;
-        border-bottom-right-radius: 8px;
-        border-bottom-left-radius: 8px; }
-        /* line 36, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/utils/_mixins.scss */
-        .basket-container .myBasket .form button:hover {
-          background-color: #a6c0dc; }
-        /* line 40, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/utils/_mixins.scss */
-        .basket-container .myBasket .form button:active {
-          border-bottom: 1px solid #406FA0;
-          transform: translateY(3px);
-          outline: none; }
+      width: 20%; }
+  /* line 43, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+  #myBasket .myBasket-list-article {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+    /* line 51, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .myBasket-list-article-col1 {
+      display: flex;
+      width: 40%; }
+      /* line 55, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+      #myBasket .myBasket-list-article-col1 .z1 {
+        width: 90px;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid #C4C4C4;
+        overflow: hidden;
+        display: flex;
+        justify-content: center; }
+        /* line 64, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+        #myBasket .myBasket-list-article-col1 .z1 img {
+          height: 100%; }
+      /* line 69, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+      #myBasket .myBasket-list-article-col1 .z2 {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 20px; }
+      /* line 75, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+      #myBasket .myBasket-list-article-col1 h3 {
+        margin: 0;
+        margin-bottom: 10px; }
+      /* line 80, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+      #myBasket .myBasket-list-article-col1__ref {
+        font-size: 11px; }
+    /* line 85, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .myBasket-list-article-col2, #myBasket .myBasket-list-article-col3, #myBasket .myBasket-list-article-col4 {
+      width: 20%;
+      text-align: center;
+      align-self: center; }
+  /* line 95, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+  #myBasket #myRecap {
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+    /* line 102, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket #myRecapSpace1 {
+      width: 40%; }
+    /* line 106, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket #myRecapSpace1::before {
+      content: "\2002"; }
+    /* line 110, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket #myRecapSpace2, #myBasket #myRecapSpace3, #myBasket #myRecapSpace4 {
+      width: 20%;
+      text-align: center; }
+  /* line 118, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+  #myBasket .form {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    text-align: center;
+    margin: 30px 0;
+    justify-content: space-between; }
+    /* line 127, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .form .titre {
+      width: 100%; }
+      /* line 130, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+      #myBasket .form .titre h2 {
+        margin-bottom: 16px; }
+    /* line 135, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .form .champ {
+      margin-top: 8px;
+      padding: 5px;
+      padding-left: 12px;
+      height: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      width: 100%; }
+    /* line 145, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .form .champ:nth-child(2),
+    #myBasket .form .champ:nth-child(3),
+    #myBasket .form .champ:nth-child(5),
+    #myBasket .form .champ:nth-child(6) {
+      width: calc(50% - 22px); }
+    /* line 153, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_basket.scss */
+    #myBasket .form button {
+      width: 100%;
+      height: 50px;
+      margin-top: 15px;
+      background: #B1C8E0;
+      color: #406FA0;
+      border: 1px solid;
+      border-color: rgba(64, 111, 160, 0.3);
+      font-family: 'Sansita', sans-serif;
+      font-style: italic;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 7px;
+      outline: none;
+      border-bottom: 5px solid #406FA0;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px; }
+      /* line 36, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/utils/_mixins.scss */
+      #myBasket .form button:hover {
+        background-color: #a6c0dc; }
+      /* line 40, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/utils/_mixins.scss */
+      #myBasket .form button:active {
+        border-bottom: 1px solid #406FA0;
+        transform: translateY(3px);
+        outline: none; }
 
 /* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P5/P5-Orinoco/css/pages/_confirmation.scss */
 .message-container {
