@@ -7,7 +7,7 @@ const getProductsData = () => {
             for (let valeur of response) {
 
                 //  NOTE: je limite volontairement le nombre d'articles à 4 pour le design
-                response.length = 4
+                response.length = 4;
 
                 //  NOTE: Création des balises HTML des produits
                 const productContainerCard = document.createElement("div");
@@ -42,7 +42,7 @@ const getProductsData = () => {
                 productLink.onclick = () => {
                     localStorage.setItem("monid", valeur._id);
                     location.href = "./product.html";
-                }
+                };
             }
 
             //console.log(document.querySelector(".cardContainer").innerHTML);

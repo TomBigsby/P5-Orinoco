@@ -9,7 +9,6 @@
     <script src="https://kit.fontawesome.com/7cfecc5119.js" crossorigin="anonymous"></script>
 
     <script src="JS/page_basket.js" defer></script>
-
 </head>
 
 <body>
@@ -47,23 +46,21 @@
                     TOTAL PANIER
                 </div>
                 <div id="myRecapSpace2"></div>
-                <div id="myRecapSpace3"></div>
-                <div id="myRecapSpace4"></div>
+                <div id="myRecapQuantity"></div>
+                <div id="myRecapTotalPrice"></div>
             </div>
 
-            <form class="form" action="">
+            <form id="form" action="url_page_suivante">
                 <div class="titre">
                     <h2>Vos coordonnées</h2>
-                </div>
-                <input type="text" id="coordName" name="coordonnees" placeholder="Nom" class="champ">
-                <input type="text" id="coordLName" name="coordonnees" placeholder="Prénom" class="champ">
-                <input type="text" id="coordAdress" name="coordonnees" placeholder="Adresse" class="champ">
-                <input type="text" id="coordCP" name="coordonnees" placeholder="Code postal" class="champ">
-                <input type="text" id="coordVille" name="coordonnees" placeholder="Ville" class="champ">
-
-                <input type="text" id="coordEmail" name="coordonnees" placeholder="Email" class="champ">
-                <input type="text" id="coordTel" name="coordonnees" placeholder="Téléphone" class="champ">
-                <button id="formValid" onclick="">Valider mon panier</button>
+                </div>  
+                <input type="text" id="formFirstname" name="coordonnees" placeholder="Prénom" class="champ" required>
+                <input type="text" id="formLastname" name="coordonnees" placeholder="Nom" class="champ" required>
+                <input type="text" id="formAdress" name="coordonnees" placeholder="Adresse" class="champ" required>
+                <input type="text" id="formCP" name="coordonnees" placeholder="Code postal" class="champ" required>
+                <input type="text" id="formCity" name="coordonnees" placeholder="Ville" class="champ" required>
+                <input type="email" id="formEmail" name="coordonnees" placeholder="Email" class="champ" required>
+                <button id="formValid" >Valider le panier</button>
             </form>
         </div>
 

@@ -109,7 +109,6 @@ function getProductsData() {
                 productVariantSelect.style.borderColor = "#FFF";
             });
 
-            let myBasket
             productValid.onclick = () => {
                 // si une des couleurs est bien sélectionnée, on ajoute l'article au panier
                 if ((productVariantSelect.selectedIndex !== 0 && response.colors.length > 1) || (productVariantSelect.selectedIndex === 0 && response.colors.length == 1)) {
@@ -189,12 +188,4 @@ function getProductsData() {
             }
         });
 }
-// DEBUG: remise à zéro du nbre d'articles 
-debug.addEventListener('click', function (e) {
-    localStorage.removeItem("nbArticleCookie");
-    nbArticleDisplay.textContent = "";
-    nbArticleDisplay.style.opacity = 0;
-    nbArticle = 0;
-    localStorage.removeItem("mesArticles");
-});
 getProductsData()

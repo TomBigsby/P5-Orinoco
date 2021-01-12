@@ -39,7 +39,7 @@
         }
     }
 
-    & .myBasket-list {
+    & .myBasketList {
         &-article {
             display: flex;
             flex-direction: row;
@@ -108,14 +108,14 @@
         }
 
         &Space2,
-        &Space3,
-        &Space4 {
+        &Quantity,
+        &TotalPrice {
             width: 20%;
             text-align: center;
         }
     }
 
-    & .form {
+    & #form {
         width: 400px;
         display: flex;
         flex-wrap: wrap;
@@ -150,8 +150,14 @@
 
         }
 
-        & button {
+        & #formValid {
             @include bouton-bleu;
         }
+    }
+
+    & .emptyBasket {
+        font-size: 20px;
+        text-align: center;
+        margin: 40px 0;
     }
 }
