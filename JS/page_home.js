@@ -1,3 +1,12 @@
+//  NOTE:  récupère le nombre d'articles dans le panier pour l'afficher dans le header
+if (localStorage.getItem("nbArticleCookie") != null) {
+    nbArticleDisplay.textContent = localStorage.getItem("nbArticleCookie");
+    nbArticleDisplay.style.opacity = 1;
+} else {
+    nbArticleDisplay.style.opacity = 0;
+}
+
+
 const apiUrl = "http://localhost:3000/api/teddies/";
 const getProductsData = () => {
     fetch(apiUrl)
@@ -33,6 +42,7 @@ const getProductsData = () => {
                 //  NOTE: insertion des elements dans le DOM
                 cardsContainer.appendChild(productLink);
                 productLink.appendChild(productContainerCard);
+                productLink.appendChild(productContainerCard);
                 productContainerCard.appendChild(productPictureImg);
                 productContainerCard.appendChild(productContainerNamePrice);
                 productContainerNamePrice.appendChild(productName);
@@ -44,8 +54,6 @@ const getProductsData = () => {
                     location.href = "./product.html";
                 };
             }
-
-            //console.log(document.querySelector(".cardContainer").innerHTML);
         });
 };
 

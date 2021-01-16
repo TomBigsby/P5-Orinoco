@@ -1,17 +1,11 @@
-//  TODO: mettre l'action dans une fonction et l'intégrer
-
-if (localStorage.length != 0 || localStorage.getItem("mesArticles") != null) {
-
-
+if (localStorage.getItem("mesArticles") != null) {
 
     let tabArticles = JSON.parse(localStorage.getItem("mesArticles"));
-
 
     let getTotalQty = []
     let getTotalPrice = []
     let orderProducts = []
     for (let current of tabArticles) {
-        //    getTotalQty.push(current.article, current.id, current.price, current.image, current.quantity);
 
         const articleContainer = document.createElement("div");
         const articleContainerCol1 = document.createElement("div");
@@ -78,34 +72,11 @@ if (localStorage.length != 0 || localStorage.getItem("mesArticles") != null) {
     myRecapTotalPrice.textContent = getTotalPrice.reduce(reducer) + " €";
 
 
-    let form_OK = true;
+    //  NOTE: action sur bouton
     form.addEventListener("submit", function (event) {
 
-        // Chaque fois que l'utilisateur tente d'envoyer les données
-        // on vérifie que le champ email est valide.
-
-        /*    if (!formEmail.validity.valid) {
-                console.log("mail ok");
-            }
-            if (formTel.value.length != 10 || isNaN(formTel.value)) {
-                form_OK = false;
-            }*/
-
-
-        //  FIXME: la condition ci-dessous n'est pas reconnue
-        if (formFirstname.value == "") {
-            console.log("rien");
-            form_OK = false;
-            formFirstname.classList.add("error");
-        } else {
-            formFirstname.classList.remove("error");
-        }
-        event.preventDefault();
-
-
-
         //  NOTE: envoi des données au serveur via Fetch POST
-        //envoi au serveur :
+        // NOTE: 1 - récup des données dans un tableau
         let order = {
             contact: {
                 firstName: formFirstname.value,
@@ -117,7 +88,7 @@ if (localStorage.length != 0 || localStorage.getItem("mesArticles") != null) {
             products: orderProducts
         };
 
-
+        //NOTE: 2 - connection au serveur et envoi des données
         fetch("http://localhost:3000/api/teddies/order", {
                 method: "POST",
                 body: JSON.stringify(order),
@@ -132,15 +103,16 @@ if (localStorage.length != 0 || localStorage.getItem("mesArticles") != null) {
                     firstName: formFirstname.value,
                     totalPrice: getTotalPrice.reduce(reducer) + " €"
                 };
+                //  NOTE: récup du numéro de commande renvoyé par le serveur
                 localStorage.setItem("orderInfos", JSON.stringify(tabOrderInfos));
                 location.href = "order-confirm.html";
             })
             .catch(err => console.log(err));
+        event.preventDefault();
     });
 
-
-
 } else {
+    //  NOTE: si le panier est vide, afficher message 
     const emptyBasket = document.createElement("div");
     emptyBasket.classList.add("emptyBasket");
     emptyBasket.textContent = "Le panier est vide";

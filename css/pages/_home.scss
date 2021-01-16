@@ -1,23 +1,54 @@
 .hero {
-    position: relative;
-    width: 1000px;
-    height: 670px;
+    min-width: 100%;
+    min-height: 670px;
     background: url(../images/teddy_5.jpg) no-repeat;
-    background-size: contain;
+    background-size: cover;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    background-position: center;
+
+    &__space {
+        height: 100px;
+        width: 60%;
+    }
 
     &__title {
-        position: absolute;
-        color: $colour-primary;
+        width: 40%;
+        color: #F5F0E6;
         font-size: 70px;
-        top: 212px;
-        left: 580px;
+        align-self: center;
     }
 }
 
-.choose h2 {
-    font-size: 70px;
-    color: $colour-4;
-    margin: 15px;
+.choose h2,
+.choose2 h2 {
+    font-size: 85px;
+    color: $colour-tertiary;
+    margin: 15px 0 -15px;
+}
+
+.choose {
+    z-index: 20;
+    position: relative;
+}
+
+.choose2 {
+    width: 1000px;
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+}
+
+.choose2 h2 {
+
+    position: absolute;
+    top: 700px;
+    font-size: 8.5em;
+    opacity: 0.05;
+
+    z-index: -5;
+
 }
 
 #cardsContainer {
@@ -26,6 +57,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     & a,
     & a:visited,
@@ -35,7 +67,9 @@
     }
 }
 
-.cardsContainer a:hover {}
+#cardsContainer a:hover {
+    cursor: pointer;
+}
 
 .card {
     width: 234px;
@@ -46,6 +80,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 9px;
+    @include shadow;
 
     &__image {
         width: 216px;

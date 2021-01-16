@@ -6,6 +6,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: end;
+    @include shadow;
 }
 
 .footer {
@@ -23,17 +25,17 @@ footer {
 .footer a:visited,
 .footer a:link {
     text-decoration: none;
-    color: $colour-tertiary;
+    color: #494949;
 }
 
 .footer a:hover {
-    color: $colour-background1;
+    color: $colour-primary;
 }
 
 .footer .title {
     @include font-primary;
     font-size: 22px;
-    color: #000;
+    color: $colour-tertiary;
 }
 
 .follow {

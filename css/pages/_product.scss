@@ -1,8 +1,26 @@
 #product-container {
+    position: relative;
     max-width: 1000px;
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin-top:70px;
+
+    & .btBack {
+        position: absolute;
+        top: -50px;
+        background-color: $colour-secondary;
+        color: $colour-tertiary;
+        padding: 6px 10px 6px 7px;
+        border-radius: 20px;
+        @include font-secondary;
+        @include shadow;
+    }
+
+    & .btBack::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        content: "\f0a8";
+    }
 }
 
 .product-image {
@@ -12,7 +30,10 @@
     border: 17px solid $colour-secondary;
     box-sizing: border-box;
     border-radius: 30px;
+    @include shadow;
 }
+
+
 
 .product-details {
     margin: 0 0 30px 50px;
@@ -59,7 +80,8 @@
         @include font-primary;
         font-size: 50px;
         line-height: 50px;
-        color: $colour-tertiary;
+        color: $colour-primary;
+        box-shadow:10px 
     }
 
     &__valid {

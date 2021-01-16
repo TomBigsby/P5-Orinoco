@@ -18,7 +18,7 @@
     width: 100%;
     height: 50px;
     margin-top: 15px;
-    background: $colour-secondary;
+    background-color: $colour-4;
     color: $colour-tertiary;
     border: 1px solid;
     border-color: rgba($colour-tertiary, 0.3);
@@ -34,7 +34,7 @@
     border-bottom-left-radius: 8px;
 
     &:hover {
-        background-color: darken($colour-secondary, 3%);
+        background-color: lighten($colour-tertiary,30%);
     }
 
     &:active {
@@ -48,7 +48,7 @@
 
 // NOTE:  Ombres
 @mixin shadow {
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 

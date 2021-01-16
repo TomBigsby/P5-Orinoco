@@ -75,7 +75,7 @@ function getProductsData() {
             productDetailsBottom.appendChild(productValid);
 
 
-            //  NOTE:  Action sur le bouton > ajout article au panier
+            //  NOTE:  Action sur le bouton > ajout article au panier + incrémentation du nombre dans le header
             function addToBasket() {
                 nbArticleDisplay.style.opacity = 0;
 
@@ -95,7 +95,7 @@ function getProductsData() {
             }
             addToBasket()
 
-
+            // NOTE: applique l'animation "bulle" quand l'article est mis au panier
             function animBulle() {
                 window.requestAnimationFrame(function (time) {
                     window.requestAnimationFrame(function (time) {
@@ -110,19 +110,18 @@ function getProductsData() {
             });
 
             productValid.onclick = () => {
-                // si une des couleurs est bien sélectionnée, on ajoute l'article au panier
+                // NOTE: si une des couleurs est bien sélectionnée, on ajoute l'article au panier
                 if ((productVariantSelect.selectedIndex !== 0 && response.colors.length > 1) || (productVariantSelect.selectedIndex === 0 && response.colors.length == 1)) {
-
                     animBulle()
 
-                    // incrémentation du nombre d'article dans le panier
+                    // NOTE: incrémentation du nombre d'article dans le panier
                     nbArticle++;
                     nbArticleDisplay.textContent = nbArticle;
                     localStorage.setItem("nbArticleCookie", nbArticle);
                     addToBasket();
                     bulleText.textContent = response.name + " " + productVariantSelect.value + " ajouté au panier";
 
-                    // NOTE: localstorage > Ajout de l'article mis au panier OU création du cookie mesArticles
+                    // NOTE: Ajout de l'article mis au panier dans le localstorage OU le cas échéant,  videcréation du cookie mesArticles vide
                     let tabArticles = JSON.parse(localStorage.getItem("mesArticles")) || [];
 
                     let qty;
@@ -131,13 +130,13 @@ function getProductsData() {
                     let colorSelected;
                     let trouve = false;
 
-                    // Si le panier n'est pas vide
+                    // NOTE: Si le panier n'est pas vide
                     if (tabArticles.length > 0) {
 
-                        // Boucle avec break si l'article cherché est trouvé
+                        // NOTE: Boucle avec break si l'article cherché est trouvé
                         for (var i = 0; i < tabArticles.length && !trouve; i++) {
 
-                            // Si l'article courant est dans le panier (ne renvoi pas "-1")
+                            // NOTE: Si l'article courant est dans le panier (ne renvoi pas "-1")
                             if (tabArticles[i].article.indexOf(response.name) !== -1) {
                                 currentQty = tabArticles[i].quantity;
                                 qty = currentQty + 1;
@@ -156,7 +155,7 @@ function getProductsData() {
                         qty = 1;
                     }
 
-                    //  Note : si l'article n'est pas en double > push infos de la page (response.xxx) SINON si l'article est en double > splice infos de la page (diff = qty = qty++)
+                    // NOTE:  si l'article n'est pas en double > push infos de la page (response.xxx) SINON si l'article est en double > splice infos de la page (diff = qty = qty++)
                     if (indexDoublon === false || indexDoublon === undefined) {
                         tabArticles.push({
                             article: response.name,
@@ -166,7 +165,7 @@ function getProductsData() {
                             quantity: qty
                         });
                     } else {
-                        // on remplace l'article avec les même données mais quantité +1
+                        // NOTE: on remplace l'article avec les même données mais quantité +1
                         tabArticles.splice(indexDoublon, 1, {
                             article: response.name,
                             id: response._id,
@@ -185,7 +184,7 @@ function getProductsData() {
                     productVariantSelect.style.border = "2px solid red";
 
                 }
-            }
+            };
         });
 }
-getProductsData()
+getProductsData();
