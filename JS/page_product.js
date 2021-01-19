@@ -1,7 +1,5 @@
 let nbArticle;
 
-//  TODO: Optimisation/lisibilité : créer des fonctions pour chaque action et lancer uniquement les fonctions lors d'événements ET organiser les fonctions
-
 
 function getProductsData() {
     fetch("http://localhost:3000/api/teddies/" + localStorage.getItem("monid"))
@@ -109,6 +107,7 @@ function getProductsData() {
                 productVariantSelect.style.borderColor = "#FFF";
             });
 
+            //Action au clic
             productValid.onclick = () => {
                 // NOTE: si une des couleurs est bien sélectionnée, on ajoute l'article au panier
                 if ((productVariantSelect.selectedIndex !== 0 && response.colors.length > 1) || (productVariantSelect.selectedIndex === 0 && response.colors.length == 1)) {
@@ -175,8 +174,7 @@ function getProductsData() {
                         });
                     }
 
-                    productVariantSelect.selectedIndex = 0;
-                    //                    
+                    productVariantSelect.selectedIndex = 0;              
 
                     //NOTE: localstorage >  remplacement de l'ancienne valeur de la variable mesArticles en localstorage par la nouvelle
                     localStorage.setItem("mesArticles", JSON.stringify(tabArticles));

@@ -41,6 +41,7 @@ const getProductsData = () => {
 
                 //  NOTE: insertion des elements dans le DOM
                 cardsContainer.appendChild(productLink);
+
                 productLink.appendChild(productContainerCard);
                 productLink.appendChild(productContainerCard);
                 productContainerCard.appendChild(productPictureImg);
@@ -54,6 +55,7 @@ const getProductsData = () => {
                     location.href = "./product.html";
                 };
             }
+
         });
 };
 

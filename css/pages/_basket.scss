@@ -1,169 +1,268 @@
 #myBasket {
-    width: 900px;
-    height: auto;
-    background-color: $colour-secondary;
-    @include shadow;
-    @include font-secondary;
-    color: #000;
-    padding: 30px;
-    margin-top: 50px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+	width: calc(100% - 60px - 60px);
+	max-width: 1000px;
+	height: auto;
+	background-color: $colour-secondary;
+	@include shadow;
+	@include font-secondary;
+	color: #000000;
+	padding: 30px;
+	margin-top: 50px;
+	border-radius: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 
-    & h2 {
-        @include font-primary;
-        font-size: 30px;
-        margin: 0;
-        text-align: center;
-        margin-bottom: 30px;
-    }
+	& h2 {
+		@include font-primary;
+		font-size: 30px;
+		margin: 0;
+		text-align: center;
+		margin-bottom: 30px;
+	}
 
-    & .head {
-        background-color:$colour-primary;
-        padding: 8px;
-        border-radius: 7px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: 500;
+	& .head {
+		background-color: $colour-primary;
+		padding: 8px;
+		border-radius: 7px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		font-weight: 500;
+
+		@include mobile-only {
+			display: none;
+		}
+
+		& .head-article {
+			width: 40%;
+
+			&::before {
+				content: "\2002";
+			}
+		}
 
 
-        & .head-article {
-            width: 40%;
-        }
 
-        & .head-price,
-        & .head-quantity,
-        & .head-total {
-            text-align: center;
-            width: 20%;
-        }
-    }
+		& .head-price,
+		& .head-quantity,
+		& .head-total {
+			text-align: center;
+			width: 20%;
+		}
+	}
 
-    & .myBasketList {
-        &-article {
-            display: flex;
-            flex-direction: row;
-            padding: 8px;
+	& .myBasketList {
+		&-article {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			padding: 8px;
+			border-bottom: $colour-filet;
 
-            position: relative;
-            border-bottom: $colour-filet;
+			&-col1 {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				width: 40%;
 
-            &-col1 {
-                display: flex;
-                width: 40%;
+				& .z1 {
+					min-width: 90px;
+					width: 90px;
+					height: 100px;
+					-o-object-fit: cover;
+					   object-fit: cover;
+					border: 1px solid $colour-tertiary;
+					overflow: hidden;
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
 
-                & .z1 {
-                    width: 90px;
-                    height: 100px;
-                    object-fit: cover;
-                    border: 1px solid $colour-tertiary;
-                    overflow: hidden;
-                    display: flex;
-                    justify-content: center;
+					& img {
+						height: 100%;
+					}
+				}
 
-                    & img {
-                        height: 100%;
-                    }
-                }
+				& .z2 {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+					    flex-direction: column;
+					margin: 10px 20px;
+				}
 
-                & .z2 {
-                    display: flex;
-                    flex-direction: column;
-                    margin: 10px 20px;
-                }
+				& h3 {
+					margin: 0;
+					margin-bottom: 10px;
+					color: $colour-tertiary;
+					@include font-primary;
+				}
 
-                & h3 {
-                    margin: 0;
-                    margin-bottom: 10px;
-                    color: $colour-tertiary;
-                    @include font-primary;
-                }
+				&__ref {
+					font-size: 11px;
+				}
+			}
 
-                &__ref {
-                    font-size: 11px;
-                }
-            }
 
-            &-col2,
-            &-col3,
-            &-col4 {
-                width: 20%;
-                text-align: center;
-                align-self: center;
-            }
-        }
-    }
 
-    & #myRecap {
-        display: flex;
-        font-weight: 600;
-        font-size: 20px;
-        padding: 20px 10px;
-        border-bottom: $colour-filet;
+			@include tablet-desktop-only {
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: row;
+				    flex-direction: row;
 
-        &Space1 {
-            width: 40%;
-        }
+				&-col2,
+				&-col3,
+				&-col4 {
+					width: 20%;
+					text-align: center;
+					-ms-flex-item-align: center;
+					align-self: center;
+				}
+			}
 
-        &Space1::before {
-            content: "\2002"
-        }
+			@include mobile-only {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-ms-flex-direction: column;
+				    flex-direction: column;
 
-        &Space2,
-        &Quantity,
-        &TotalPrice {
-            width: 20%;
-            text-align: center;
-        }
-    }
+				&-col2::before {
+					content: "Prix :";
+				}
 
-    & #form {
-        width: 400px;
-        display: flex;
-        flex-wrap: wrap;
-        align-self: center;
-        text-align: center;
-        margin: 40px 0 15px;
-        justify-content: space-between;
-        background-color:lighten($colour-primary,30%);
-        padding: 20px;
-        border-radius: 10px;
+				&-col3::before {
+					content: "Quantité :";
+				}
 
-        & .titre {
-            width: 100%;
+				&-col4::before {
+					content: "Total :";
+				}
+			}
+		}
+	}
 
-            & h2 {
-                margin-bottom: 16px;
-            }
-        }
+	& #myRecap {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		font-weight: 600;
+		font-size: 20px;
+		padding: 20px 10px;
+		border-bottom: $colour-filet;
 
-        & .champ {
-            margin-top: 8px;
-            padding: 5px;
-            padding-left: 12px;
-            height: 30px;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            width: 100%;
-        }
+		&Space1 {
+			width: 40%;
+		}
 
-        & .champ:nth-child(2),
-        & .champ:nth-child(3),
-        & .champ:nth-child(5),
-        & .champ:nth-child(6) {
-            width: calc(50% - 22px);
+		&Space2,
+		&Quantity,
+		&TotalPrice {
+			width: 20%;
+			text-align: center;
+		}
 
-        }
+		@include tablet-only {
+			&Quantity {
+				opacity: 1;
+			}
+		}
 
-        & #formValid {
-            @include bouton-bleu;
-        }
-    }
+		@include mobile-only {
+			&Quantity {
+				opacity: 0;
+			}
+		}
+	}
 
-    & .emptyBasket {
-        font-size: 20px;
-        text-align: center;
-        margin: 40px 0;
-    }
+	& #form {
+		max-width: 400px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-ms-flex-item-align: center;
+		align-self: center;
+		text-align: center;
+		margin: 40px 0 15px;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		background-color: lighten($colour-primary, 30%);
+		padding: 20px;
+		border-radius: 10px;
+
+
+		& .titre {
+			width: 100%;
+
+			& h2 {
+				margin-bottom: 16px;
+			}
+		}
+
+		& .champ {
+			margin-top: 8px;
+			padding: 5px;
+			padding-left: 12px;
+			height: 30px;
+			border: 1px solid rgba(0, 0, 0, 0.15);
+			border-radius: 4px;
+			width: 100%;
+
+
+
+			@include mobile-only {
+				width: 100%;
+			}
+
+			@include tablet-only {
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(5),
+				&:nth-child(6) {
+					width: calc(50% - 22px);
+				}
+			}
+
+			@include desktop-only {
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(5),
+				&:nth-child(6) {
+					width: calc(50% - 22px);
+				}
+			}
+		}
+
+
+
+
+		& #formValid {
+			@include bouton-bleu;
+		}
+	}
+
+	& .emptyBasket {
+		font-size: 20px;
+		text-align: center;
+		margin: 40px 0;
+	}
 }

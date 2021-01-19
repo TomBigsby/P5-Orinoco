@@ -1,72 +1,79 @@
 // NOTE:  Polices
 @mixin font-primary {
-    font-family: 'Sansita', sans-serif;
-    font-style: italic;
-    font-weight: 800;
-    letter-spacing: 0.02em;
+	font-family: "Sansita", sans-serif;
+	font-style: italic;
+	font-weight: 800;
+	letter-spacing: 0.02em;
 }
 
 @mixin font-secondary {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: 400;
 }
 
 
 //  NOTE: boutons
 @mixin bouton-bleu {
-    width: 100%;
-    height: 50px;
-    margin-top: 15px;
-    background-color: $colour-4;
-    color: $colour-tertiary;
-    border: 1px solid;
-    border-color: rgba($colour-tertiary, 0.3);
-    @include font-primary;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 7px;
-    outline: none;
+	width: 100%;
+	min-height: 50px;
+	margin-top: 15px;
+	padding: 8px;
+	background-color: $colour-4;
+	color: $colour-tertiary;
+	border: 1px solid;
+	border-color: rgba($colour-tertiary, 0.3);
+	@include font-primary;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 7px;
+	outline: none;
+	border-bottom: 5px solid $colour-tertiary;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
 
-    border-bottom: 5px solid $colour-tertiary;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+	&:hover {
+		background-color: lighten($colour-tertiary, 30%);
+	}
 
-    &:hover {
-        background-color: lighten($colour-tertiary,30%);
-    }
-
-    &:active {
-        border-bottom: 1px solid $colour-tertiary;
-        transform: translateY(3px);
-        outline: none;
-    }
-
+	&:active {
+		border-bottom: 1px solid $colour-tertiary;
+		-webkit-transform: translateY(3px);
+		        transform: translateY(3px);
+		outline: none;
+	}
 }
 
 
 // NOTE:  Ombres
 @mixin shadow {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
 // NOTE:  Medias Queries
 @mixin mobile-only {
-    @media screen and (max-width: $breakpoint-mobile) {
-        @content;
-    }
+	@media screen and (max-width: $breakpoint-mobile) {
+		@content;
+	}
 }
 
 @mixin tablet-only {
-    @media screen and (min-width: $breakpoint-tablet) {
-        @content;
-    }
+	@media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+		@content;
+	}
+}
+
+@mixin tablet-desktop-only {
+	@media screen and (min-width: $breakpoint-tablet) {
+		@content;
+	}
 }
 
 @mixin desktop-only {
-    @media screen and (min-width: $breakpoint-desktop) {
-        @content;
-    }
+	@media screen and (min-width: $breakpoint-desktop) {
+		@content;
+	}
 }

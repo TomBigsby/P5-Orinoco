@@ -1,64 +1,117 @@
 footer {
-    width: 100%;
-    height: 150px;
-    background-color: $colour-secondary;
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: end;
-    @include shadow;
+	width: 100%;
+	min-height: 150px;
+	background-color: $colour-secondary;
+	margin-top: 70px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-item-align: end;
+	align-self: end;
+	@include shadow;
 }
 
 .footer {
-    width: 1000px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    @include font-secondary;
-    font-size: 17px;
-    line-height: 30px;
-    color: $colour-tertiary;
+	width: 1000px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+
+	@include font-secondary;
+	font-size: 17px;
+	line-height: 30px;
+	color: $colour-tertiary;
+	padding: 0 30px;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+
+	@include desktop-only {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		    flex-direction: row;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	}
+
+	@include mobile-only {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		    flex-direction: column;
+		-ms-flex-line-pack: center;
+		align-content: center;
+		text-align: center;
+	}
 }
 
 .footer a,
 .footer a:visited,
 .footer a:link {
-    text-decoration: none;
-    color: #494949;
+	text-decoration: none;
+	color: #494949;
 }
 
 .footer a:hover {
-    color: $colour-primary;
+	color: $colour-primary;
 }
 
 .footer .title {
-    @include font-primary;
-    font-size: 22px;
-    color: $colour-tertiary;
+	@include font-primary;
+	font-size: 22px;
+	color: $colour-tertiary;
+}
+
+.contact,
+.follow,
+.mentions {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
+	margin: 20px;
 }
 
 .follow {
-    text-align: center;
+	text-align: center;
 
-    .social {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-    }
+	.social {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		    flex-direction: row;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		text-align: center;
+	}
 
-    .rs-icon {
-        width: 40px;
-        height: 40px;
-        background-color: #000;
-        border-radius: 8px;
-        margin: 5px;
-        margin-top: 10px;
-    }
+	.rs-icon {
+		width: 40px;
+		height: 40px;
+		background-color: #000000;
+		border-radius: 8px;
+		margin: 5px;
+		margin-top: 10px;
+	}
 }
 
-
 .mentions {
-    text-align: right;
+	@include desktop-only {
+		text-align: right;
+	}
+
+	@include tablet-only {
+		text-align: right;
+	}
 }
