@@ -1,21 +1,21 @@
 // NOTE: Si le panier n'est pas vide...
 if (localStorage.getItem("mesArticles") != null) {
-    
+
     // afficher le formulaire
-    form.style.display="flex";
-    
-    
-// NOTE: créer un tableau et le remplir avec les données du localStorage
+    form.style.display = "flex";
+
+
+    // NOTE: créer un tableau et le remplir avec les données du localStorage
     let tabArticles = JSON.parse(localStorage.getItem("mesArticles"));
 
-   // NOTE: Création des tableaux necessaire pour calculer les prix
-    let getTotalQty = []
-    let getTotalPrice = []
-    let orderProducts = []
-    
+    // NOTE: Création des tableaux necessaire pour calculer les prix
+    let getTotalQty = [];
+    let getTotalPrice = [];
+    let orderProducts = [];
+
     //  NOTE: pour chaque article du tableau...
     for (let current of tabArticles) {
-        
+
         //  NOTE: je créé une ligne "article"
         const articleContainer = document.createElement("div");
         const articleContainerCol1 = document.createElement("div");
@@ -76,7 +76,7 @@ if (localStorage.getItem("mesArticles") != null) {
 
         orderProducts.push(current.id)
     }
-    //  NOTE: formule de calcul du total + ajout des valaurs dans DOM
+    //  NOTE: formule de calcul du total + ajout des valeurs dans le DOM
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     myRecapQuantity.textContent = getTotalQty.reduce(reducer);
     myRecapTotalPrice.textContent = getTotalPrice.reduce(reducer) + " €";
@@ -127,6 +127,5 @@ if (localStorage.getItem("mesArticles") != null) {
     emptyBasket.classList.add("emptyBasket");
     emptyBasket.textContent = "Le panier est vide";
     myBasketList.appendChild(emptyBasket);
-    form.style.display="none";
-    
+    form.style.display = "none";
 }

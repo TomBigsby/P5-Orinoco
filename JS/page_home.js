@@ -1,13 +1,6 @@
-//  NOTE:  récupère le nombre d'articles dans le panier pour l'afficher dans le header
-if (localStorage.getItem("nbArticleCookie") != null) {
-    nbArticleDisplay.textContent = localStorage.getItem("nbArticleCookie");
-    nbArticleDisplay.style.opacity = 1;
-} else {
-    nbArticleDisplay.style.opacity = 0;
-}
-
-
 const apiUrl = "http://localhost:3000/api/teddies/";
+
+//  NOTE: Connexion à l'API et récupération des infos des articles de la base de données (BDD)
 const getProductsData = () => {
     fetch(apiUrl)
         .then(response => response.json())
@@ -59,4 +52,17 @@ const getProductsData = () => {
         });
 };
 
+
+//  NOTE:  récupère le nombre d'articles dans le panier pour l'afficher dans le header
+const getProductInBasketNumber = () => {
+    if (localStorage.getItem("nbArticleCookie") != null) {
+        nbArticleDisplay.textContent = localStorage.getItem("nbArticleCookie");
+        nbArticleDisplay.style.opacity = 1;
+    } else {
+        nbArticleDisplay.style.opacity = 0;
+    }
+}
+
+
 getProductsData();
+getProductInBasketNumber();

@@ -17,7 +17,6 @@ function getProductsData() {
             const productPrice = document.createElement("div");
             const productValid = document.createElement("button");
 
-
             //  NOTE: création des classes pour mise en forme CSS
             const productContainer = document.getElementById("product-container");
 
@@ -32,7 +31,6 @@ function getProductsData() {
             productPrice.classList.add("product-details__price");
             productValid.classList.add("product-details__valid");
 
-
             //  NOTE: remplissage des div avec les données de la BDD
             productPicture.setAttribute("src", response.imageUrl);
             productName.textContent = response.name;
@@ -40,7 +38,7 @@ function getProductsData() {
 
             lineVarPrice.appendChild(productVariantSelect);
 
-
+            ////////  ComboBox des variations de l'article  ////////
             //  NOTE: creation du tableau pour les éléments du comboBox
             let productVariantOption = [];
             productVariantOption.push(document.createElement("option"));
@@ -57,6 +55,11 @@ function getProductsData() {
                 productVariantOption[productVariantOption.length - 1].textContent = response.colors[i];
                 productVariantSelect.appendChild(productVariantOption[productVariantOption.length - 1]);
             }
+            //  NOTE: rétablie la couleur du comboBox au changement de valeur
+            productVariantSelect.addEventListener('change', (event) => {
+                productVariantSelect.style.borderColor = "#FFF";
+            });
+            ////////  FIN - ComboBox des variations de l'article ////////
 
             productPrice.textContent = response.price / 100 + " €";
             productValid.textContent = "Ajouter au panier";
@@ -72,7 +75,6 @@ function getProductsData() {
 
             lineVarPrice.appendChild(productPrice);
             productDetailsBottom.appendChild(productValid);
-
 
             //  NOTE:  Action sur le bouton > ajout article au panier + incrémentation du nombre dans le header
             function addToBasket() {
@@ -92,7 +94,7 @@ function getProductsData() {
                     alert("localStorage n'est pas supporté");
                 }
             }
-            addToBasket()
+            addToBasket();
 
             // NOTE: applique l'animation "bulle" quand l'article est mis au panier
             function animBulle() {
@@ -103,22 +105,20 @@ function getProductsData() {
                 });
                 bulle.className = "c";
             }
-            //  NOTE: rétablie la couleur du CB   
-            productVariantSelect.addEventListener('change', (event) => {
-                productVariantSelect.style.borderColor = "#FFF";
-            });
 
             //Action au clic
             productValid.onclick = () => {
                 // NOTE: si une des couleurs est bien sélectionnée, on ajoute l'article au panier
                 if ((productVariantSelect.selectedIndex !== 0 && response.colors.length > 1) || (productVariantSelect.selectedIndex === 0 && response.colors.length == 1)) {
+                    
                     animBulle()
+                    addToBasket();
 
                     // NOTE: incrémentation du nombre d'article dans le panier
                     nbArticle++;
                     nbArticleDisplay.textContent = nbArticle;
                     localStorage.setItem("nbArticleCookie", nbArticle);
-                    addToBasket();
+                    
                     bulleText.textContent = response.name + " " + productVariantSelect.value + " ajouté au panier";
 
                     // NOTE: Ajout de l'article mis au panier dans le localstorage OU le cas échéant, création du localStorage mesArticles vide
