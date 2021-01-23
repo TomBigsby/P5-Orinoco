@@ -1,12 +1,22 @@
+// NOTE: Si le panier n'est pas vide...
 if (localStorage.getItem("mesArticles") != null) {
-
+    
+    // afficher le formulaire
+    form.style.display="flex";
+    
+    
+// NOTE: créer un tableau et le remplir avec les données du localStorage
     let tabArticles = JSON.parse(localStorage.getItem("mesArticles"));
 
+   // NOTE: Création des tableaux necessaire pour calculer les prix
     let getTotalQty = []
     let getTotalPrice = []
     let orderProducts = []
+    
+    //  NOTE: pour chaque article du tableau...
     for (let current of tabArticles) {
-
+        
+        //  NOTE: je créé une ligne "article"
         const articleContainer = document.createElement("div");
         const articleContainerCol1 = document.createElement("div");
         const articleContainerCol1Z1 = document.createElement("div");
@@ -88,7 +98,7 @@ if (localStorage.getItem("mesArticles") != null) {
             products: orderProducts
         };
 
-        //NOTE: 2 - connection au serveur et envoi des données
+        //NOTE: 2 - puis connection au serveur et envoi des données
         fetch("http://localhost:3000/api/teddies/order", {
                 method: "POST",
                 body: JSON.stringify(order),
@@ -103,7 +113,7 @@ if (localStorage.getItem("mesArticles") != null) {
                     firstName: formFirstname.value,
                     totalPrice: getTotalPrice.reduce(reducer) + " €"
                 };
-                //  NOTE: récup du numéro de commande renvoyé par le serveur
+                //  NOTE: récup du numéro de commande retourné par le serveur
                 localStorage.setItem("orderInfos", JSON.stringify(tabOrderInfos));
                 location.href = "order-confirm.html";
             })
@@ -117,4 +127,6 @@ if (localStorage.getItem("mesArticles") != null) {
     emptyBasket.classList.add("emptyBasket");
     emptyBasket.textContent = "Le panier est vide";
     myBasketList.appendChild(emptyBasket);
+    form.style.display="none";
+    
 }

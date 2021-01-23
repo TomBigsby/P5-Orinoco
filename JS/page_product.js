@@ -1,6 +1,6 @@
 let nbArticle;
 
-
+//  NOTE: récupération des infos de l'article via l'API à partir de l'ID
 function getProductsData() {
     fetch("http://localhost:3000/api/teddies/" + localStorage.getItem("monid"))
         .then(response => response.json())
@@ -41,10 +41,11 @@ function getProductsData() {
             lineVarPrice.appendChild(productVariantSelect);
 
 
-            //  NOTE: creation du tableau pour le comboBox + ajout du premier élément "action" SI l'article à plus d'une variation
+            //  NOTE: creation du tableau pour les éléments du comboBox
             let productVariantOption = [];
             productVariantOption.push(document.createElement("option"));
 
+            //  NOTE: ajout du premier élément "action" SI l'article à plus d'une variations
             if (response.colors.length > 1) {
                 productVariantOption[productVariantOption.length - 1].textContent = "-- Choisissez la couleur --";
                 productVariantSelect.appendChild(productVariantOption[productVariantOption.length - 1]);
@@ -120,7 +121,7 @@ function getProductsData() {
                     addToBasket();
                     bulleText.textContent = response.name + " " + productVariantSelect.value + " ajouté au panier";
 
-                    // NOTE: Ajout de l'article mis au panier dans le localstorage OU le cas échéant,  videcréation du cookie mesArticles vide
+                    // NOTE: Ajout de l'article mis au panier dans le localstorage OU le cas échéant, création du localStorage mesArticles vide
                     let tabArticles = JSON.parse(localStorage.getItem("mesArticles")) || [];
 
                     let qty;
@@ -174,7 +175,7 @@ function getProductsData() {
                         });
                     }
 
-                    productVariantSelect.selectedIndex = 0;              
+                    productVariantSelect.selectedIndex = 0;
 
                     //NOTE: localstorage >  remplacement de l'ancienne valeur de la variable mesArticles en localstorage par la nouvelle
                     localStorage.setItem("mesArticles", JSON.stringify(tabArticles));

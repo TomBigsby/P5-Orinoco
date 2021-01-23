@@ -14,10 +14,14 @@ message.appendChild(firstName);
 orderNumber.appendChild(number);
 totalOrder.appendChild(totalPrice);
 
-//  NOTE: Le bouton renvoi à l'accueil et réinitialise le panier.
-homeButton.onclick = () => {
-    location.href = "index.html";
+
+// NOTE: Réinitialisation du panier et suppression de toutes les données des local Storage
     localStorage.removeItem("nbArticleCookie");
     localStorage.removeItem("orderInfos");
     localStorage.removeItem("mesArticles");
+
+
+//  NOTE: Le bouton renvoi à l'accueil et réinitialise le panier.
+homeButton.onclick = () => {
+    location.href = "index.html";
 }
