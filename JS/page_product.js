@@ -110,16 +110,18 @@ function getProductsData() {
             productValid.onclick = () => {
                 // NOTE: si une des couleurs est bien sélectionnée, on ajoute l'article au panier
                 if ((productVariantSelect.selectedIndex !== 0 && response.colors.length > 1) || (productVariantSelect.selectedIndex === 0 && response.colors.length == 1)) {
-                    
+
                     animBulle()
-                    addToBasket();
+
 
                     // NOTE: incrémentation du nombre d'article dans le panier
                     nbArticle++;
                     nbArticleDisplay.textContent = nbArticle;
                     localStorage.setItem("nbArticleCookie", nbArticle);
-                    
+
                     bulleText.textContent = response.name + " " + productVariantSelect.value + " ajouté au panier";
+
+                    addToBasket();
 
                     // NOTE: Ajout de l'article mis au panier dans le localstorage OU le cas échéant, création du localStorage mesArticles vide
                     let tabArticles = JSON.parse(localStorage.getItem("mesArticles")) || [];
