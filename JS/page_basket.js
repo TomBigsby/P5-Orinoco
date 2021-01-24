@@ -24,6 +24,9 @@ if (localStorage.getItem("mesArticles") != null) {
         const articleContainerCol1Z2 = document.createElement("div");
         const productName = document.createElement("h3");
         const productRef = document.createElement("div");
+        const productPrice_mobile = document.createElement("div");
+        const productQuantity_mobile = document.createElement("div");
+        const productTotal_mobile = document.createElement("div");
         const articleContainerCol2 = document.createElement("div");
         const productPrice = document.createElement("div");
         const articleContainerCol3 = document.createElement("div");
@@ -40,6 +43,11 @@ if (localStorage.getItem("mesArticles") != null) {
         articleContainerCol1Z2.classList.add("z2");
         productName.classList.add("myBasketList-article-col1__name");
         productRef.classList.add("myBasketList-article-col1__ref");
+
+        productPrice_mobile.classList.add("myBasketList-article-col1__price_mobile");
+        productQuantity_mobile.classList.add("myBasketList-article-col1__quantity_mobile");
+        productTotal_mobile.classList.add("myBasketList-article-col1__total_mobile");
+
         articleContainerCol2.classList.add("myBasketList-article-col2");
         productPrice.classList.add("myBasketList-article-col2__price");
         articleContainerCol3.classList.add("myBasketList-article-col3");
@@ -55,6 +63,11 @@ if (localStorage.getItem("mesArticles") != null) {
         productQuantity.textContent = current.quantity;
         productTotal.textContent = current.quantity * (current.price / 100) + " €";
 
+        productPrice_mobile.textContent = "Prix : " + current.price / 100 + " €";
+        productQuantity_mobile.textContent = "Quantité : " + current.quantity
+        productTotal_mobile.textContent = "Total : " + (current.price / 100) * current.quantity + " €";
+
+
         //  NOTE: insertion des elements dans le DOM
         myBasketList.appendChild(articleContainer);
         articleContainer.appendChild(articleContainerCol1);
@@ -63,6 +76,11 @@ if (localStorage.getItem("mesArticles") != null) {
         articleContainerCol1.appendChild(articleContainerCol1Z2);
         articleContainerCol1Z2.appendChild(productName);
         articleContainerCol1Z2.appendChild(productRef);
+
+        articleContainerCol1Z2.appendChild(productPrice_mobile);
+        articleContainerCol1Z2.appendChild(productQuantity_mobile);
+        articleContainerCol1Z2.appendChild(productTotal_mobile);
+
         articleContainer.appendChild(articleContainerCol2);
         articleContainerCol2.appendChild(productPrice);
         articleContainer.appendChild(articleContainerCol3);

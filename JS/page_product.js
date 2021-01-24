@@ -11,6 +11,7 @@ function getProductsData() {
             const productDetailsTop = document.createElement("div");
             const productName = document.createElement("div");
             const productDesc = document.createElement("div");
+            const productRef = document.createElement("div");
             const productDetailsBottom = document.createElement("div");
             const lineVarPrice = document.createElement("div");
             const productVariantSelect = document.createElement("select");
@@ -25,6 +26,7 @@ function getProductsData() {
             productDetailsTop.classList.add("product-details-top");
             productName.classList.add("product-details__name");
             productDesc.classList.add("product-details__description");
+            productRef.classList.add("product-details__description");
             productDetailsBottom.classList.add("product-details-bottom");
             lineVarPrice.classList.add("line-varPrice");
             productVariantSelect.classList.add("product-details__variations");
@@ -35,6 +37,7 @@ function getProductsData() {
             productPicture.setAttribute("src", response.imageUrl);
             productName.textContent = response.name;
             productDesc.textContent = response.description;
+            productRef.textContent = "ref : " + response._id;
 
             lineVarPrice.appendChild(productVariantSelect);
 
@@ -70,6 +73,7 @@ function getProductsData() {
             productDetails.appendChild(productDetailsTop);
             productDetailsTop.appendChild(productName);
             productDetailsTop.appendChild(productDesc);
+            productDetailsTop.appendChild(productRef);
             productDetails.appendChild(productDetailsBottom);
             productDetailsBottom.appendChild(lineVarPrice);
 
