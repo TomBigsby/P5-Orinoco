@@ -256,16 +256,16 @@
                 }
             }
         }
-
-        & #formValid {
-            @include bouton-bleu;
-        }
-
-
-        & .emptyBasket {
-            font-size: 20px;
-            text-align: center;
-            margin: 40px 0;
-        }
     }
+
+    & #formValid {
+        @include bouton-bleu;
+    }
+
+    & .emptyBasket {
+        font-size: 20px;
+        text-align: center;
+        margin: 40px 0;
+    }
+
 }
